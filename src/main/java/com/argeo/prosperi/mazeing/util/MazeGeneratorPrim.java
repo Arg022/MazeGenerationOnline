@@ -42,9 +42,9 @@ public class MazeGeneratorPrim {
         return x > 0 && y > 0 && x < maze.getWidth() - 1 && y < maze.getHeight() - 1;
     }
 
-    public void generate(int startX, int startY) {
-        List<int[]> walls = new ArrayList<>();
+    public Maze generate(int startX, int startY) {
         int[][] map = maze.getMazeMap();
+        List<int[]> walls = new ArrayList<>();
         map[startY][startX] = 0;
         addWalls(startX, startY, walls);
 
@@ -57,5 +57,6 @@ public class MazeGeneratorPrim {
             }
         }
         maze.setMazeMap(map);
+        return maze.getMazeMap();
     }
 }
