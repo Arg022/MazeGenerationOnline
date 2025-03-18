@@ -22,7 +22,7 @@ public class MazeGeneratorDFS {
         return x > 0 && y > 0 && x < maze.getWidth() && y < maze.getHeight();
     }
 
-    public void generate(int startX, int startY) {
+    public int[][] generate(int startX, int startY) {
         map[startY][startX] = 0;
         List<Integer> directions = Arrays.asList(0, 1, 2, 3);
         Collections.shuffle(directions, random);
@@ -38,5 +38,6 @@ public class MazeGeneratorDFS {
 
         }
         maze.setMazeMap(map);
+        return maze.getMazeMap();
     }
 }

@@ -42,7 +42,7 @@ public class MazeGeneratorPrim {
         return x > 0 && y > 0 && x < maze.getWidth() - 1 && y < maze.getHeight() - 1;
     }
 
-    public Maze generate(int startX, int startY) {
+    public int[][] generate(int startX, int startY) {
         int[][] map = maze.getMazeMap();
         List<int[]> walls = new ArrayList<>();
         map[startY][startX] = 0;
@@ -59,4 +59,6 @@ public class MazeGeneratorPrim {
         maze.setMazeMap(map);
         return maze.getMazeMap();
     }
+    //TODO: CORRECT PRIM E DSF ROUTES
+
 }
