@@ -26,29 +26,29 @@ public class MazeController {
         return "Server is running!";
     }
 
-    @GetMapping("/kruskal")
-    public int[][] getMazeKruskal(@RequestParam int width, @RequestParam int height, @RequestParam Long seed) {
-        System.out.println("Received params: width=" + width + ", height=" + height + ", seed=" + seed + "/n");
+    @PostMapping("/kruskal")
+    public int[][] getMazeKruskal(@RequestBody MazeRequest mazeRequest) {
+        System.out.println("Received params: width=" + mazeRequest.getWidth() + ", height=" + mazeRequest.getHeight() + ", seed=" + mazeRequest.getSeed() + "/n");
 
-        Maze maze = mazeService.generateKruskalMaze(width,height,seed);
+        Maze maze = mazeService.generateKruskalMaze(mazeRequest.getWidth(), mazeRequest.getHeight(), mazeRequest.getSeed());
         printMaze.printMazeConsole(maze);
         return maze.getMazeMap();
     }
 
-    @GetMapping("/dfs")
-    public int[][] getMazeDfs(@RequestParam int width, @RequestParam int height, @RequestParam Long seed) {
-        System.out.println("Received params: width=" + width + ", height=" + height + ", seed=" + seed + "/n");
+    @PostMapping("/dfs")
+    public int[][] getMazeDfs(@RequestBody MazeRequest mazeRequest) {
+        System.out.println("Received params: width=" + mazeRequest.getWidth() + ", height=" + mazeRequest.getHeight() + ", seed=" + mazeRequest.getSeed() + "/n");
 
-        Maze maze = mazeService.generateDFSMaze(width,height,seed);
+        Maze maze = mazeService.generateDFSMaze(mazeRequest.getWidth(), mazeRequest.getHeight(), mazeRequest.getSeed());
         printMaze.printMazeConsole(maze);
         return maze.getMazeMap();
     }
 
-    @GetMapping("/prim")
-    public int[][] getMazePrim(@RequestParam int width, @RequestParam int height, @RequestParam Long seed) {
-        System.out.println("Received params: width=" + width + ", height=" + height + ", seed=" + seed + "/n");
+    @PostMapping("/prim")
+    public int[][] getMazePrim(@RequestBody MazeRequest mazeRequest) {
+        System.out.println("Received params: width=" + mazeRequest.getWidth() + ", height=" + mazeRequest.getHeight() + ", seed=" + mazeRequest.getSeed() + "/n");
 
-        Maze maze = mazeService.MazeGeneratorPrim(width,height,seed);
+        Maze maze = mazeService.generatePrimMaze(mazeRequest.getWidth(), mazeRequest.getHeight(), mazeRequest.getSeed());
         printMaze.printMazeConsole(maze);
         return maze.getMazeMap();
     }

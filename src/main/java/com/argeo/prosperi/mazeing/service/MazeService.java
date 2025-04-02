@@ -18,7 +18,7 @@ public class MazeService {
         dfsMaze.generate(1,1);
         return dfsMaze.getMaze();
     }
-    public Maze MazeGeneratorPrim(int width, int height, long seed ){
+    public Maze generatePrimMaze(int width, int height, long seed ){
         MazeGeneratorPrim primMaze = new MazeGeneratorPrim(width,height,seed);
         primMaze.generate(1,1);
         return primMaze.getMaze();
