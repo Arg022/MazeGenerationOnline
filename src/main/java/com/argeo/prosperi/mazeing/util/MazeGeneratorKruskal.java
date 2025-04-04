@@ -61,10 +61,10 @@ public class MazeGeneratorKruskal {
             int cell1 = y1 * maze.getWidth() + x1;
             int cell2 = y2 * maze.getWidth() + x2;
 
-            // Se le celle sono in set separati, rimuovi la parete
+
             if (uf.find(cell1) != uf.find(cell2)) {
                 uf.union(cell1, cell2);
-                map[(y1 + y2) / 2][(x1 + x2) / 2] = 0; // Rimuovi la parete tra le celle
+                map[(y1 + y2) / 2][(x1 + x2) / 2] = 0;
             }
         }
         maze.setMazeMap(map);
