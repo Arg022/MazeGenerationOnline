@@ -17,7 +17,7 @@ public class MazeGeneratorKruskal {
 
     public MazeGeneratorKruskal(int width, int height, long seed) {
         this.maze = new Maze(width, height, "Kruskal", seed);
-        this.random = new Random(seed);  // Imposta il seed
+        this.random = new Random(seed);
     }
 
     static class UnionFind {

@@ -15,7 +15,7 @@ public class MazeGeneratorPrim {
 
     public MazeGeneratorPrim(int width, int height, long seed) {
         this.maze = new Maze(width, height, "Prim", seed);
-        this.random = new Random(seed);  // Imposta il seed
+        this.random = new Random(seed);
     }
 
     private boolean canBePassage(int x, int y) {
@@ -59,6 +59,5 @@ public class MazeGeneratorPrim {
         maze.setMazeMap(map);
         return maze.getMazeMap();
     }
-    //TODO: CORRECT PRIM E DSF ROUTES
 
 }
