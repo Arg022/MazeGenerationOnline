@@ -40,7 +40,7 @@ public class Maze {
 
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-                mazeMap[i][j] = 1; // 1 is a wall
+                mazeMap[i][j] = 1;
             }
         }
     }
