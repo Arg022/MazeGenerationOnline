@@ -12,7 +12,6 @@ public class MazeGeneratorKruskal {
     private Maze maze;
     private Random random;
 
-    // Vettori DX e DY per gestire direzioni
     private static final int[] DX = {-1, 1, 0, 0};
     private static final int[] DY = {0, 0, -1, 1};
 
@@ -21,7 +20,6 @@ public class MazeGeneratorKruskal {
         this.random = new Random(seed);  // Imposta il seed
     }
 
-    // Classe UnionFind per gestire i gruppi di celle collegate
     static class UnionFind {
         int[] parent;
 
@@ -42,7 +40,6 @@ public class MazeGeneratorKruskal {
         }
     }
 
-    // Genera il labirinto con l'algoritmo di Kruskal
     public int[][] generate() {
         int[][] map = maze.getMazeMap();
         List<int[]> walls = new ArrayList<>();

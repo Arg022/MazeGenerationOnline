@@ -1,7 +1,6 @@
 package com.argeo.prosperi.mazeing.util.printer;
 
 import com.argeo.prosperi.mazeing.models.Maze;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
