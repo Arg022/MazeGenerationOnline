@@ -4,11 +4,12 @@ import com.argeo.prosperi.mazeing.models.Maze;
 import lombok.Getter;
 
 import java.util.*;
+
 @Getter
 public class MazeGeneratorDFS {
     private Maze maze;
     private Random random;
-    private int[][] map = maze.getMazeMap();
+    private int[][] map;
 
     private static final int[] DX = {-1, 1, 0, 0};
     private static final int[] DY = {0, 0, -1, 1};
@@ -16,6 +17,7 @@ public class MazeGeneratorDFS {
     public MazeGeneratorDFS(int width, int height, long seed) {
         this.maze = new Maze(width, height, "DFS", seed);
         this.random = new Random(seed);
+        this.map = maze.getMazeMap(); // Inizializza `map` dopo aver inizializzato `maze`
     }
 
     private boolean isInBounds(int x, int y) {
@@ -35,7 +37,6 @@ public class MazeGeneratorDFS {
                 map[startY + DY[dir]][startX + DX[dir]] = 0;
                 generate(nx, ny);
             }
-
         }
         maze.setMazeMap(map);
         return maze.getMazeMap();
