@@ -12,9 +12,6 @@ public class MazeGeneratorKruskal {
     private Maze maze;
     private Random random;
 
-    private static final int[] DX = {-1, 1, 0, 0};
-    private static final int[] DY = {0, 0, -1, 1};
-
     public MazeGeneratorKruskal(int width, int height, long seed) {
         this.maze = new Maze(width, height, "Kruskal", seed);
         this.random = new Random(seed);
@@ -45,7 +42,7 @@ public class MazeGeneratorKruskal {
         List<int[]> walls = new ArrayList<>();
         for (int y = 1; y < maze.getHeight(); y += 2) {
             for (int x = 1; x < maze.getWidth(); x += 2) {
-                map[y][x] = 0; // Crea un percorso
+                map[y][x] = 0;
                 if (x + 2 < maze.getWidth()) walls.add(new int[]{x, y, x + 2, y});
                 if (y + 2 < maze.getHeight()) walls.add(new int[]{x, y, x, y + 2});
             }
